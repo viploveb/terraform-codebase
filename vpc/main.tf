@@ -6,7 +6,7 @@ data "aws_availability_zones" "available" {}
 
 
 ################################################################################
-# VPC Module
+# VPC Module - https://github.com/terraform-aws-modules/terraform-aws-vpc/tree/master
 ################################################################################
 
 module "vpc" {
