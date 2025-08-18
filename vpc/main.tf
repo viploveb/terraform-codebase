@@ -22,7 +22,7 @@ module "vpc" {
 
   enable_nat_gateway     = true
   single_nat_gateway     = false
-  one_nat_gateway_per_az = true
+  one_nat_gateway_per_az = true # for high-availability
 
   manage_default_security_group = false
 
