@@ -26,8 +26,22 @@ module "vpc" {
 
   manage_default_security_group = false
 
+  vpc_flow_log_iam_role_name            = "vpc-logs-role"
+  vpc_flow_log_iam_role_use_name_prefix = false
+  ## set these to true to enable vpc flow logs
+  enable_flow_log                      = false
+  create_flow_log_cloudwatch_log_group = false
+  create_flow_log_cloudwatch_iam_role  = false
+  ##
+  flow_log_max_aggregation_interval = 600 # seconds (60-600 sec)
+
   tags = local.tags
 }
+
+
+################
+# security group
+################
 
 resource "aws_security_group" "default" {
   name        = "${local.name}_default"
