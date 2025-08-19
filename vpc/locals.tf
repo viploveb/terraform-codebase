@@ -7,5 +7,6 @@ locals {
 
   tags = {
     name = local.name
+    env  = "dev"
   }
 }
